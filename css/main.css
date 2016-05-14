@@ -1,0 +1,43 @@
+body {
+  background-color: #F7F7F7;
+}
+#install {
+  width: 600px;
+  margin: 0 auto;
+  font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+}
+#zazu {
+  width: 600px;
+  max-height: 400px;
+  margin: 40px auto 0;
+  box-shadow: 0px 0px 37px 5px rgba(0,0,0,0.75);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.github-corner > svg {
+  fill: #70B7FD;
+  color: #fff;
+}
+.theme-finder {
+  width: 600px;
+  margin: 0 auto;
+  color: gray;
+}
+.theme-finder h2 {
+  font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+}
+.theme-finder section.help {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.theme-finder input {
+  width: 85%;
+  font-size: 30px;
+}
+.theme-finder button {
+  float: right;
+  width: 10%;
+  font-size: 30px;
+}
+.theme-finder button:hover {
+  color: green;
+}
