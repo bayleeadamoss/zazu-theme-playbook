@@ -10,7 +10,7 @@ const Fork = React.createClass({
   render () {
     return (
       <div>
-        <a href='{this.props.repo}' className='github-corner'>
+        <a href={'https://github.com/'+this.props.repo} className='github-corner'>
           <svg
             width='80'
             height='80'

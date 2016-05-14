@@ -73,7 +73,7 @@ const Fork = React.createClass({displayName: "Fork",
   render () {
     return (
       React.createElement("div", null, 
-        React.createElement("a", {href: "{this.props.repo}", className: "github-corner"}, 
+        React.createElement("a", {href: 'https://github.com/'+this.props.repo, className: "github-corner"}, 
           React.createElement("svg", {
             width: "80", 
             height: "80", 
