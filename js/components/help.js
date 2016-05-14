@@ -6,7 +6,12 @@ const Help = React.createClass({
           <p>Not working?</p>
           <ul>
             <li>Are you pushing your <code>gh-pages</code> branch?</li>
-            <li>Is your css located in <code>./dist/main.css</code>?</li>
+            <li>
+              Is your css located in <code>./dist/main.css</code>?
+              <ul>
+                <li>This is a requirement of the playbook, not Zazu!</li>
+              </ul>
+            </li>
           </ul>
         </section>
     )

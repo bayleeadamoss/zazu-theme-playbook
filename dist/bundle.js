@@ -109,7 +109,12 @@ const Help = React.createClass({displayName: "Help",
           React.createElement("p", null, "Not working?"), 
           React.createElement("ul", null, 
             React.createElement("li", null, "Are you pushing your ", React.createElement("code", null, "gh-pages"), " branch?"), 
-            React.createElement("li", null, "Is your css located in ", React.createElement("code", null, "./dist/main.css"), "?")
+            React.createElement("li", null, 
+              "Is your css located in ", React.createElement("code", null, "./dist/main.css"), "?", 
+              React.createElement("ul", null, 
+                React.createElement("li", null, "This is a requirement of the playbook, not Zazu!")
+              )
+            )
           )
         )
     )
