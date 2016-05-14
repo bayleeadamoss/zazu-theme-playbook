@@ -3,8 +3,6 @@
  */
 const Fork = React.createClass({
   propTypes: {
-    bgColor: React.PropTypes.string.isRequired,
-    catColor: React.PropTypes.string.isRequired,
     repo: React.PropTypes.string.isRequired,
   },
   render () {

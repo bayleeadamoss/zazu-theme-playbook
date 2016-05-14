@@ -43,10 +43,7 @@ const Viewer = React.createClass({
               result.className = this.state.activeIndex === index ? 'active' : null
               return result
             })} />
-          <Fork
-            bgColor='#70B7FD'
-            catColor='#fff'
-            repo={this.props.theme} />
+          <Fork repo={this.props.theme} />
         </div>
     )
   },

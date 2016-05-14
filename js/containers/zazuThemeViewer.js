@@ -2,6 +2,7 @@ const data = require('../data.js')
 const Search = require('../components/search')
 const Help = require('../components/help')
 const Viewer = require('./viewer')
+const Fork = require('../components/fork')
 
 const ZazuThemeViewer = React.createClass({
   getInitialState () {
@@ -46,6 +47,7 @@ const ZazuThemeViewer = React.createClass({
               <Search
                 onChange={this.setTheme} />
               <Help />
+              <Fork repo='tinytacoteam/theme-playbook' />
             </div> }
           { this.state.theme &&
             <Viewer

@@ -66,8 +66,6 @@ module.exports = Demo
  */
 const Fork = React.createClass({displayName: "Fork",
   propTypes: {
-    bgColor: React.PropTypes.string.isRequired,
-    catColor: React.PropTypes.string.isRequired,
     repo: React.PropTypes.string.isRequired,
   },
   render () {
@@ -226,10 +224,7 @@ const Viewer = React.createClass({displayName: "Viewer",
               result.className = this.state.activeIndex === index ? 'active' : null
               return result
             })}), 
-          React.createElement(Fork, {
-            bgColor: "#70B7FD", 
-            catColor: "#fff", 
-            repo: this.props.theme})
+          React.createElement(Fork, {repo: this.props.theme})
         )
     )
   },
@@ -242,6 +237,7 @@ const data = require('../data.js')
 const Search = require('../components/search')
 const Help = require('../components/help')
 const Viewer = require('./viewer')
+const Fork = require('../components/fork')
 
 const ZazuThemeViewer = React.createClass({displayName: "ZazuThemeViewer",
   getInitialState () {
@@ -285,7 +281,8 @@ const ZazuThemeViewer = React.createClass({displayName: "ZazuThemeViewer",
               React.createElement("h2", null, "Zazu Theme Playbook!"), 
               React.createElement(Search, {
                 onChange: this.setTheme}), 
-              React.createElement(Help, null)
+              React.createElement(Help, null), 
+              React.createElement(Fork, {repo: "tinytacoteam/theme-playbook"})
             ), 
            this.state.theme &&
             React.createElement(Viewer, {
@@ -298,7 +295,7 @@ const ZazuThemeViewer = React.createClass({displayName: "ZazuThemeViewer",
 
 module.exports = ZazuThemeViewer
 
-},{"../components/help":4,"../components/search":6,"../data.js":9,"./viewer":7}],9:[function(require,module,exports){
+},{"../components/fork":3,"../components/help":4,"../components/search":6,"../data.js":9,"./viewer":7}],9:[function(require,module,exports){
 module.exports = {
   "results": [
     {
