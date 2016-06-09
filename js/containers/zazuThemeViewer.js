@@ -9,7 +9,6 @@ const ZazuThemeViewer = React.createClass({
     return {
       theme: '',
       data: data.results,
-      activeIndex: 0,
       query: '',
     }
   },
@@ -27,11 +26,6 @@ const ZazuThemeViewer = React.createClass({
   },
   setTheme (theme) {
     window.location.hash = theme
-  },
-  mouseEnter (index) {
-    this.setState({
-      activeIndex: index,
-    })
   },
   handleQueryChange (query) {
     this.setState({

@@ -44,32 +44,45 @@ var Demo = React.createClass({
           onChange: this.handleQueryChange,
           placeholder: 'Search..' }),
         React.createElement(
-          'ul',
-          null,
-          this.props.results.map(function (result, i) {
-            if (!result.show) {
-              return;
-            }
-            return React.createElement(
-              'li',
-              {
-                key: i,
-                onMouseEnter: function onMouseEnter() {
-                  _this.mouseEnter(i);
-                },
-                className: result.className },
-              React.createElement('img', { src: result.icon, alt: '' }),
-              React.createElement(
-                'h2',
-                null,
-                result.title
-              ),
-              result.subtitle && React.createElement(
-                'h3',
-                null,
-                result.subtitle
-              )
-            );
+          'div',
+          { className: 'results' },
+          React.createElement(
+            'ul',
+            null,
+            this.props.results.map(function (result, i) {
+              if (!result.show) {
+                return;
+              }
+              return React.createElement(
+                'li',
+                {
+                  key: i,
+                  onMouseEnter: function onMouseEnter() {
+                    _this.mouseEnter(i);
+                  },
+                  className: result.className },
+                React.createElement('img', { src: result.icon, alt: '' }),
+                React.createElement(
+                  'h2',
+                  null,
+                  result.title
+                ),
+                result.subtitle && React.createElement(
+                  'h3',
+                  null,
+                  result.subtitle
+                )
+              );
+            })
+          ),
+          this.props.results.filter(function (result) {
+            return result.show && result.active && result.preview;
+          }).map(function (result, i) {
+            var src = 'data:text/html;charset=utf-8,' + encodeURI(result.preview);
+            return React.createElement('iframe', {
+              key: i,
+              id: 'preview',
+              src: src });
           })
         )
       ),
@@ -328,11 +341,12 @@ var Viewer = React.createClass({
           if (_this.state.query.length === 0) {
             result.show = false;
           } else if (_this.state.query.length > 2) {
-            result.show = index === _this.props.results.length - 1;
+            result.show = index === 0;
           } else {
             result.show = true;
           }
-          result.className = _this.state.activeIndex === index ? 'active' : null;
+          result.active = _this.state.activeIndex === index;
+          result.className = result.active ? 'active' : null;
           return result;
         }) }),
       React.createElement(Fork, { repo: this.props.theme })
@@ -357,7 +371,6 @@ var ZazuThemeViewer = React.createClass({
     return {
       theme: '',
       data: data.results,
-      activeIndex: 0,
       query: ''
     };
   },
@@ -375,11 +388,6 @@ var ZazuThemeViewer = React.createClass({
   },
   setTheme: function setTheme(theme) {
     window.location.hash = theme;
-  },
-  mouseEnter: function mouseEnter(index) {
-    this.setState({
-      activeIndex: index
-    });
   },
   handleQueryChange: function handleQueryChange(query) {
     this.setState({
@@ -418,8 +426,9 @@ module.exports = ZazuThemeViewer;
 module.exports = {
   "results": [{
     "icon": "icons/calculator.png",
-    "title": 6,
-    "subtitle": "Select item to copy the value to the clipboard."
+    "title": '1,048,576',
+    "subtitle": "Select item to copy the value to the clipboard.",
+    "preview": "<h3>1,048,576b<h3><h3>1,024kb</h3><h3>1mb</h3>" + "<style>#preview h3 { margin: 0 }</style>"
   }, {
     "icon": "icons/amazon.png",
     "title": "Search Amazon for 'batteries'"

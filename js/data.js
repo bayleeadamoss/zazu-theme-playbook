@@ -2,8 +2,10 @@ module.exports = {
   "results": [
     {
       "icon": "icons/calculator.png",
-      "title": 6,
-      "subtitle": "Select item to copy the value to the clipboard."
+      "title": '1,048,576',
+      "subtitle": "Select item to copy the value to the clipboard.",
+      "preview": "<h3>1,048,576b<h3><h3>1,024kb</h3><h3>1mb</h3>" +
+        "<style>#preview h3 { margin: 0 }</style>"
     },
     {
       "icon": "icons/amazon.png",

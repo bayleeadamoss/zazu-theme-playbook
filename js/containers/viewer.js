@@ -36,11 +36,12 @@ const Viewer = React.createClass({
               if (this.state.query.length === 0) {
                 result.show = false
               } else if (this.state.query.length > 2) {
-                result.show = index === this.props.results.length - 1
+                result.show = index === 0
               } else {
                 result.show = true
               }
-              result.className = this.state.activeIndex === index ? 'active' : null
+              result.active = this.state.activeIndex === index
+              result.className = result.active ? 'active' : null
               return result
             })} />
           <Fork repo={this.props.theme} />

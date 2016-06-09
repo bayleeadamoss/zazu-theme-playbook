@@ -26,22 +26,37 @@ const Demo = React.createClass({
             type="text"
             onChange={this.handleQueryChange}
             placeholder="Search.." />
-          <ul>
-            { this.props.results.map((result, i) => {
-              if (!result.show) { return }
-              return (
-                <li
-                  key={i}
-                  onMouseEnter={() => { this.mouseEnter(i) }}
-                  className={ result.className }>
-                  <img src={ result.icon } alt='' />
-                  <h2>{ result.title }</h2>
-                  { result.subtitle &&
-                    <h3>{ result.subtitle }</h3> }
-                </li>
-              )
-            }) }
-          </ul>
+          <div className="results">
+            <ul>
+              { this.props.results.map((result, i) => {
+                if (!result.show) { return }
+                return (
+                  <li
+                    key={i}
+                    onMouseEnter={() => { this.mouseEnter(i) }}
+                    className={ result.className }>
+                    <img src={ result.icon } alt='' />
+                    <h2>{ result.title }</h2>
+                    { result.subtitle &&
+                      <h3>{ result.subtitle }</h3> }
+                  </li>
+                )
+              }) }
+            </ul>
+            {
+              this.props.results.filter((result) => {
+                return result.show && result.active && result.preview
+              }).map((result, i) => {
+                const src = 'data:text/html;charset=utf-8,' + encodeURI(result.preview)
+                return (
+                  <iframe
+                    key={i}
+                    id="preview"
+                    src={src} />
+                )
+              })
+            }
+          </div>
         </div>
         <link href={this.cssUrl()} rel='stylesheet' type='text/css' />
       </section>
