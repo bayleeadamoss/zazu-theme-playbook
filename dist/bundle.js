@@ -20,7 +20,7 @@ var Demo = React.createClass({
   cssUrl: function cssUrl() {
     var user = this.props.theme.split('/')[0];
     var repo = this.props.theme.split('/')[1];
-    return 'http://' + user + '.github.io/' + repo + '/dist/main.css';
+    return 'https://' + user + '.github.io/' + repo + '/dist/main.css';
   },
   handleQueryChange: function handleQueryChange(event) {
     var query = event.target.value;
