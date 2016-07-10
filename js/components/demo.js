@@ -8,7 +8,7 @@ const Demo = React.createClass({
   cssUrl () {
     const user = this.props.theme.split('/')[0];
     const repo = this.props.theme.split('/')[1];
-    return 'http://' + user + '.github.io/' + repo + '/dist/main.css';
+    return 'https://' + user + '.github.io/' + repo + '/dist/main.css';
   },
   handleQueryChange (event) {
     const query = event.target.value
