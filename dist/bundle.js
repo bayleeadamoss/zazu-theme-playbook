@@ -61,7 +61,7 @@ var Demo = React.createClass({
                     _this.mouseEnter(i);
                   },
                   className: result.className },
-                React.createElement('img', { src: result.icon, alt: '' }),
+                result.icon.indexOf('fa-') === 0 ? React.createElement('i', { className: 'icon fa ' + result.icon, 'aria-hidden': 'true' }) : React.createElement('img', { className: 'icon', src: result.icon, alt: '' }),
                 React.createElement(
                   'h2',
                   null,
@@ -281,7 +281,7 @@ var Search = React.createClass({
       { className: "search" },
       React.createElement("input", {
         ref: this.setReference,
-        placeholder: "tinytacoteam/light-theme",
+        placeholder: "tinytacoteam/zazu-light-theme",
         onKeyUp: this.onKeyUp,
         type: "text" }),
       React.createElement(
@@ -425,7 +425,7 @@ module.exports = ZazuThemeViewer;
 
 module.exports = {
   "results": [{
-    "icon": "icons/calculator.png",
+    "icon": "fa-calculator",
     "title": '1,048,576',
     "subtitle": "Select item to copy the value to the clipboard.",
     "preview": "<h3>1,048,576b<h3><h3>1,024kb</h3><h3>1mb</h3>" + "<style>#preview h3 { margin: 0 }</style>"

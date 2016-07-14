@@ -35,7 +35,11 @@ const Demo = React.createClass({
                     key={i}
                     onMouseEnter={() => { this.mouseEnter(i) }}
                     className={ result.className }>
-                    <img src={ result.icon } alt='' />
+                    { result.icon.indexOf('fa-') === 0 ? (
+                      <i className={'icon fa ' + result.icon } aria-hidden='true'></i>
+                    ) : (
+                      <img className='icon' src={ result.icon } alt='' />
+                    ) }
                     <h2>{ result.title }</h2>
                     { result.subtitle &&
                       <h3>{ result.subtitle }</h3> }

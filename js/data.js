@@ -1,7 +1,7 @@
 module.exports = {
   "results": [
     {
-      "icon": "icons/calculator.png",
+      "icon": "fa-calculator",
       "title": '1,048,576',
       "subtitle": "Select item to copy the value to the clipboard.",
       "preview": "<h3>1,048,576b<h3><h3>1,024kb</h3><h3>1mb</h3>" +

@@ -18,7 +18,7 @@ const Search = React.createClass({
         <section className="search">
           <input
             ref={this.setReference}
-            placeholder="tinytacoteam/light-theme"
+            placeholder="tinytacoteam/zazu-light-theme"
             onKeyUp={this.onKeyUp}
             type="text" />
           <button onClick={this.submit}>Go!</button>
