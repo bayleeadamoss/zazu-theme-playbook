@@ -2,8 +2,8 @@
 
 Want an easy playbook for your Zazu theme? Look no further!
 
-* [Homepage](https://tinytacoteam.github.io/theme-playbook)
-* [Example Playful Theme](https://tinytacoteam.github.io/theme-playbook/#tinytacoteam/playful-theme)
+* [Homepage](https://tinytacoteam.github.io/zazu-theme-playbook)
+* [Example Playful Theme](https://tinytacoteam.github.io/zazu-theme-playbook/#tinytacoteam/zazu-playful-theme)
 
 This simply React application offers a permalink to preview your theme in a Zazu
 like application. This does not intent do have all the functionality of Zazu,
