@@ -12,10 +12,10 @@ const Install = React.createClass({
     return (
       <div id="install">
         <h2>{ this.readableName() }</h2>
-        <p>To install add this to your <code>~/.zazurc.js</code> file.</p>
+        <p>To install add this to your <code>~/.zazurc.json</code> file.</p>
         <pre>
-          module.exports = {'{\n'}
-          {'  '}'theme': '{ this.props.theme }',
+          {'{\n'}
+          {'  '}"theme": "{ this.props.theme }"
           {'\n}'}
         </pre>
       </div>

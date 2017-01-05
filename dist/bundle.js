@@ -234,19 +234,18 @@ var Install = React.createClass({
         React.createElement(
           'code',
           null,
-          '~/.zazurc.js'
+          '~/.zazurc.json'
         ),
         ' file.'
       ),
       React.createElement(
         'pre',
         null,
-        'module.exports = ',
         '{\n',
         '  ',
-        '\'theme\': \'',
+        '"theme": "',
         this.props.theme,
-        '\',',
+        '"',
         '\n}'
       )
     );
